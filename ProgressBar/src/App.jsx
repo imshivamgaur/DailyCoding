@@ -1,25 +1,36 @@
+import { useEffect, useState } from "react";
+
 const ProgressBar = ({ progress }) => {
+  const [animatedProgress, setAnimatedProgress] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => setAnimatedProgress(progress), 100);
+  }, [progress]);
+
   return (
     <div className="outer">
       <div
         className="inner"
         style={{
-          width: `${progress}%`,
-          color: `${progress < 5 ? "black" : "white"}`,
+          transform: `translateX(${animatedProgress - 100}%)`,
+          // width: `${progress}%`,
+
+          color: `${animatedProgress < 5 ? "black" : "white"}`,
         }}
+        // Accessibility
         role="progressbar"
         aria-valuenow={progress}
         aria-valuemax={100}
         aria-valuemin={0}
       >
-        {progress}%
+        {animatedProgress}%
       </div>
     </div>
   );
 };
 
 const App = () => {
-  const bars = [3, 5, 10, 20, 30, 40, 70, 90, 100];
+  const bars = [3, 5, 15, 20, 35, 45, 70, 80, 95];
 
   return (
     <>
