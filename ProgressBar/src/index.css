@@ -1,0 +1,17 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.outer {
+  margin-top: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.inner {
+  background-color: green;
+  transition: all ease 0.5s;
+  color: white;
+}
