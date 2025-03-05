@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "name": "node_modules",
+    "isFolder": true,
+    "children": [
+      {
+        "name": "bg.jpeg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "src",
+    "isFolder": true,
+    "children": [
+      {
+        "id": 3,
+        "name": "components",
+        "isFolder": true,
+        "children": [
+          {
+            "id": 4,
+            "name": "test",
+            "isFolder": true,
+            "children": [
+              {
+                "id": 5,
+                "name": "file.jsx",
+                "isFolder": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "App.jsx",
+        "isFolder": false
+      },
+      {
+        "id": 7,
+        "name": "data.json",
+        "isFolder": false
+      },
+      {
+        "id": 8,
+        "name": "index.css",
+        "isFolder": false
+      },
+      {
+        "id": 9,
+        "name": "main.jsx",
+        "isFolder": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": ".gitignore",
+    "isFolder": false
+  },
+  {
+    "id": 11,
+    "name": "index.html",
+    "isFolder": false
+  },
+  {
+    "id": 12,
+    "name": "package.json",
+    "isFolder": false
+  }
+]
