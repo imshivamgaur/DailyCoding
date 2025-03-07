@@ -89,15 +89,17 @@ const App = () => {
     setData((prev) => updateTree(prev));
   };
 
-  const removeNodeToList = (parentId) => {
+  const removeNodeToList = (itemId) => {
     // updating the tree
     const updateTree = (list) => {
       return list
-        .filter((node) => node.id !== parentId)
-        .map((node) => ({
-          ...node,
-          children: node.children ? updateTree(node.children) : [],
-        }));
+        .filter((node) => node.id !== itemId)
+        .map((node) => {
+          if (node.children) {
+            return { ...node, children: updateTree(node.children) };
+          }
+          return node;
+        });
     };
 
     setData((prev) => updateTree(prev));
