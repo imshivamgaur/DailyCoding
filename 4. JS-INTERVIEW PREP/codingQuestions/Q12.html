@@ -1,0 +1,65 @@
+<!-- Event bubbling and Event capturing  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event bubbling & Event Capturing</title>
+  <style>
+    #outerDiv {
+      border: 10px solid red;
+      padding: 40px;
+    }
+
+    #middleDiv {
+      border: 10px solid green;
+      padding: 40px;
+    }
+
+    #lowerDiv {
+      border: 10px solid yellowgreen;
+      padding: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outerDiv">
+    <div id="middleDiv">
+      <div id="lowerDiv">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /*
+     for event bubbling when we click to lowerdiv then it prints: - 
+     lowerDiv div is clicked
+     middleDiv div is clicked
+     outer div is clicked
+
+      for event capturing: The event starts from the outermost parent and moves down to the target element.
+      outer div is clicked
+      middleDiv div is clicked
+      lowerDiv div is clicked
+      
+    */
+    document.getElementById("outerDiv").addEventListener("click", (e) => {
+      console.log("outer div is clicked")
+      // e.stopPropagation();
+    }, true)
+
+    document.getElementById("middleDiv").addEventListener("click", (e) => {
+      console.log("middleDiv div is clicked")
+    }, true)
+
+    document.getElementById("lowerDiv").addEventListener("click", (e) => {
+      console.log("lowerDiv div is clicked")
+    }, true)
+
+  </script>
+</body>
+
+</html>
