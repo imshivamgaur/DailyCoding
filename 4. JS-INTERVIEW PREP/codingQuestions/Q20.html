@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #parent {
+      border: 2px solid black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 300px;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: rgb(70, 126, 156);
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: rgb(39, 169, 228);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Event Delegation Example</h2>
+  <p><b>Event Delegation is a technique in JavaScript where a single event listener is added to a parent element instead
+      of
+      multiple event listeners on individual child elements. The event propagates (bubbles) up from the child to the
+      parent,
+      where it is handled.</b></p>
+  <p>Click on a button below to see event delegation in action.</p>
+
+  <!-- Parent div where all buttons exist -->
+  <div id="parent">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+  </div>
+
+  <br>
+  <button id="addButton">Add New Button</button>
+
+  <script>
+    // Event Delegation: Adding event listener to the parent
+    document.getElementById("parent").addEventListener("click", function (event) {
+      if (event.target.tagName === "BUTTON") {
+        console.log(`${event.target.innerText} clicked`);
+      }
+    });
+
+    // Adding a new button dynamically
+    document.getElementById("addButton").addEventListener("click", function (event) {
+      const newBtn = document.createElement("button");
+      newBtn.innerText = (`New Button ${document.getElementById("parent").children.length + 1}`);
+      document.getElementById("parent").appendChild(newBtn)
+    })
+  </script>
+
+</body>
+
+</html>
