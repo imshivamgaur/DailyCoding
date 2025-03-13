@@ -12,7 +12,7 @@ const greetFunction = person.greet;
 // greetFunction();      // Hi, i am undefined
 
 
-// ==============================================
+// ================================================
 
 /*
   bind() naya function return karta hai jisme
@@ -43,7 +43,7 @@ person2.greet.call({ name: "Yoyo" }, 25);
 
 
 
-// ============================================
+// ==============================================
 
 /*
    .apply() bhi .call() jaisa hi hota hai, bas 
