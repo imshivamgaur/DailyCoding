@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <button class="editbtn">Edit</button>
               <button class="deletebtn">delete</button>
             </div>`;
-
+    // Toggle complete
     li.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") return;
       todo.completed = !todo.completed;
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       saveTodos();
     });
 
+    // Delete todo
     li.addEventListener("click", (e) => {
       if (e.target.textContent.toLowerCase() === "delete") {
         let taskId = todo.id;
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         saveTodos();
       }
     });
-
+    // update todo
     li.addEventListener("click", (e) => {
       if (e.target.textContent.toLowerCase() === "edit") {
         let newText = prompt("Edit your task:", todo.text);
